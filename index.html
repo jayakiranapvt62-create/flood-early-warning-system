@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flood Early Warning Sri Lanka</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-slate-950 text-white">
+<nav class="nav">
+    <div class="container-x nav-inner">
+        <div class="logo">
+            FloodGuard LK
+            <span class="id-tag">Roshan (@AQ-185421)</span>
+        </div>
+
+        <button id="menuBtn" class="btn small menu-btn" type="button">Menu</button>
+
+        <div id="navLinks" class="links">
+            <a href="#home">Home</a>
+            <a href="#live">Live Map</a>
+            <a href="#data">Data</a>
+            <a href="#emergency">Emergency</a>
+            <a href="#assistant">AI Assistant</a>
+        </div>
+
+        <button id="themeBtn" class="btn small" type="button">Theme</button>
+    </div>
+</nav>
+
+<header id="home" class="hero container-x">
+    <h1>Flood Early Warning System - Sri Lanka</h1>
+    <p>Live GPS risk checks, zone intelligence, and preparedness guidance.</p>
+    <p class="muted">Developer: Roshan (@AQ-185421)</p>
+</header>
+
+<main class="container-x grid">
+    <section id="live" class="card">
+        <h2>Live Map</h2>
+        <div class="actions">
+            <button id="locateBtn" class="btn" type="button">Locate Me</button>
+            <button id="clearBtn" class="btn ghost" type="button">Clear</button>
+        </div>
+        <div id="map" class="map"></div>
+    </section>
+
+    <section id="data" class="card">
+        <h2>Risk Data</h2>
+        <div class="kpis">
+            <div><span>Risk</span><strong id="riskLevel">-</strong></div>
+            <div><span>Nearest Zone</span><strong id="nearestZone">-</strong></div>
+            <div><span>Water Level</span><strong id="waterLevel">-</strong></div>
+            <div><span>GPS Accuracy</span><strong id="gpsAccuracy">-</strong></div>
+        </div>
+        <p id="instructions" class="muted">Press Locate Me to get flood instructions.</p>
+        <p class="muted">Latitude: <span id="lat">-</span> | Longitude: <span id="lng">-</span></p>
+    </section>
+
+    <section id="emergency" class="card full">
+        <h2>Emergency Contacts (Area-wise)</h2>
+        <p class="muted">Select your district to view relevant emergency hotlines.</p>
+
+        <div class="chat-input-row" style="margin-top:10px;">
+            <select id="districtSelect">
+                <option value="">-- Select District --</option>
+                <option>Colombo</option>
+                <option>Gampaha</option>
+                <option>Kalutara</option>
+                <option>Kandy</option>
+                <option>Galle</option>
+                <option>Matara</option>
+                <option>Jaffna</option>
+                <option>Batticaloa</option>
+                <option>Trincomalee</option>
+                <option>Kurunegala</option>
+                <option>Puttalam</option>
+                <option>Anuradhapura</option>
+                <option>Polonnaruwa</option>
+                <option>Badulla</option>
+                <option>Monaragala</option>
+                <option>Ratnapura</option>
+                <option>Kegalle</option>
+                <option>Hambantota</option>
+                <option>Nuwara Eliya</option>
+                <option>Ampara</option>
+                <option>Kilinochchi</option>
+                <option>Mannar</option>
+                <option>Mullaitivu</option>
+                <option>Vavuniya</option>
+            </select>
+        </div>
+
+        <div id="emergencyList" class="chat-box" style="margin-top:10px;">
+            Select a district to view emergency numbers.
+        </div>
+    </section>
+
+    <section id="assistant" class="card full">
+        <h2>AI Flood Assistant</h2>
+        <div id="chatBox" class="chat-box"></div>
+        <div class="chat-input-row">
+            <input id="chatInput" type="text" placeholder="Ask about flood safety..." />
+            <button id="chatSendBtn" class="btn" type="button">Send</button>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="container-x">© 2026 FloodGuard LK • Built by Roshan (@AQ-185421)</div>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
